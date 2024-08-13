@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<div class=" container">
+    <div class="row">
+       <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4" *ngFor="let item of datos">
+           <div class="productos">
+               <div class="miproducto">
+                   <img src="{{item.imagen}}">
+               </div>
+               <div class="nomnbreproducto">{{item.nombre}}</div>
+               <div class="precio" >{{item.precio | currency}}</div>
+               <a href="https://wa.me/+57333258754?text='Estoy interesado en este Producto'{{item.nombre}}">
+                    <div class="btn btn-primary">Comprar </div>
+                </a>
+           </div>
+       </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

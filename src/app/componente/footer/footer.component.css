@@ -1,0 +1,12 @@
+Footer {
+    background-color: rgba(238, 169, 79, 0.61);
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: medium;
+}
+img {
+    width: 50%;
+    height: 46%;
+}

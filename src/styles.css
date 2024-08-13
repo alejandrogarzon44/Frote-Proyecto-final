@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgb(219, 222, 235);
+}
+
+button.btn.btn-primary {
+    margin-top: 6px;
+    margin-bottom: 7px;
+    margin-left: 1px;
+}
+
+
+.titulo {
+    background-color: rgb(241, 181, 233);;
+    margin-top: 0px;
+    border: solid 1px;
+    padding: 3px;
+    text-align: justify;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+.Ventana {
+    position: absolute;
+    margin-left: 200px;
+    height: calc(100% - 40px);
+    width: calc(100% - 200px);
+}

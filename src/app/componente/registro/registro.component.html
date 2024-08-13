@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div id=" Registro">
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="nombre" class="form-control" [(ngModel)]="nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control"[(ngModel)]="email"> 
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control"[(ngModel)]="password">
+    </div>
+     <button type="submit" class="btn btn-primary" (click)="registrar()">Registrarse</button>
+  
+</div>
+
+

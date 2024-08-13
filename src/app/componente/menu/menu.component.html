@@ -1,0 +1,26 @@
+
+<div class="menu">
+
+  <div class="usuario">
+    <img src="./assets/Imagenes/avatar.jpg"> 
+    <div class="lblnonbre">{{nombre}}</div>
+    <div class="lblrol" >
+
+      <div class="itenmenu">Alejandro O</div>
+    <div class="itenmenu">Administrador</div>
+      <!-- <div *ngIf="rol == '1'"> Administrador</div>
+      <div *ngIf="rol == '2'"> Cliente</div> -->
+    </div>
+  </div>
+
+  <div class="opciones">
+    <div class="itenmenu"routerLink="/dashboard">Dashbord</div>
+    <div class="itenmenu"routerLink="/usuarios">Usuario</div>
+    <div class="itenmenu"routerLink="/miusuario">Mis Datos</div>
+    <div class="itenmenu"routerLink="/productos">Productos</div>
+    <div class="itenmenu"routerLink="/categorias">Categorias</div>
+    <div class="itenmenu" (click)="CerrarSession()">Salir</div>
+  </div>
+
+
+</div>

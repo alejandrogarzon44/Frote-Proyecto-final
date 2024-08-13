@@ -1,0 +1,92 @@
+<app-menu></app-menu>
+
+
+<div class="Ventana">
+    
+    <div class="titulo">Categorias</div>
+      
+    <div> 
+        <button type="button" class="btn btn-primary"(click)="AbrirModal()"> Crear Categoria</button>
+      </div>
+      
+      <div class="datos">
+    
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#Registro</th>
+                <th scope="col">Codigo Categoria</th>
+                <th scope="col">Nombre  </th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of datos; let i = index" (click)="EditarId(item._id)" >
+    
+                <td>{{i}}</td>
+                <td>{{item.cod_cat}}</td>
+                <td>{{item.nombre}}</td>
+                <td>
+                  <div *ngIf="item.estado == 1"> Activo</div>
+                  <div *ngIf="item.estado == 0"> Inactivo</div>
+    
+                </td>
+              </tr>
+            </tbody>
+              
+              
+             
+          </table>
+      </div>
+      
+    
+    </div>
+    
+    
+      
+      <!-- Modal -->
+      <div class="modal fade" id="modalnuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Categorias">Categorias</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="cod_cat">Cod/Cat</label>
+                <input type="email" class="form-control" id="cod_cat" [(ngModel)]="cod_cat" [disabled]="idseleccionado != ''">
+                
+              </div>
+              <div class="form-group">
+                <label for="nombre">Nombre de la  Categoria</label>
+                <input type="email" class="form-control" id="nombre"[(ngModel)]="nombre">
+                
+              </div>
+              <div class="form-group">
+                <div class="form-group">
+                  <label for="estado">Estado</label>
+                  <select class="form-control" id="estado"[(ngModel)]="estado">
+                  <option value="1">Activo</option>
+                  <option value="0">Inactivo</option>
+                  
+                </select>
+              </div>
+              
+                 
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idseleccionado == ''"> Crear</button>
+              <button type="button" class="btn btn-primary"(click)="Actualizar()" *ngIf="idseleccionado !=''"> Actualizar</button>
+              <button type="button" class="btn btn-danger"(click)="Eliminar()" *ngIf="idseleccionado !=''"> Eliminar</button>
+              
+    
+            </div>
+          </div>
+        </div>
+   
+  </div>
+  

@@ -1,0 +1,122 @@
+<app-menu></app-menu>
+
+<div class="Ventana">
+  <div class="titulo">Usuarios</div>
+  
+  <div> 
+    <button type="button" class="btn btn-primary"(click)="AbrirModal()"> Crear Uusuario</button>
+  </div>
+  
+  <div class="misdatos">
+
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email </th>
+            <th scope="col">Estado</th>
+            <th scope="col">Rol</th>
+
+            
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datos" (click)="EditarId(item._id)" >
+
+            
+            
+            <td>{{item.nombre}}</td>
+            <td>{{item.email}}</td>
+            
+
+            <td>
+              <div *ngIf="item.estado == 1"> Activo</div>
+              <div *ngIf="item.estado == 0"> Inactivo</div>
+
+            </td>
+            <td>
+                <div *ngIf="item.rol == 1"> Administrador</div>
+                <div *ngIf="item.rol== 2">Usuario></div>
+  
+              </td>
+          </tr>
+        </tbody>
+          
+          
+         
+      </table>
+  </div>
+  
+
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalnuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="usuario">Usuarios</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            
+          
+          
+          
+          
+          <div class="form-group">
+            <label for="nombre">Nombre del Usuario</label>
+            <input type="text" class="form-control" id="nombre"[(ngModel)]="nombre">
+            
+          </div>
+          <div class="form-group">
+            <label for="email">Email del Usuario </label>
+            <input type="text" class="form-control" id="email"[(ngModel)]="email"[disabled]="idseleccionado !=''">
+            
+          </div>
+
+          <div class="form-group"*ngIf="idseleccionado ==''">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password"[(ngModel)]="password">
+            
+          </div>
+          <div class="form-group" *ngIf="idseleccionado !=''">
+          
+              <label for="estado">Estado</label>
+              <select class="form-control" id="estado"[(ngModel)]="estado">
+              <option value="1">Activo</option>
+              <option value="0">Inactivo</option>
+              
+            </select>
+          </div>
+          <div class="form-group"*ngIf="idseleccionado !=''">
+          
+            <label for="Rol">Rol</label>
+            <select class="form-control" id="estado"[(ngModel)]="rol">
+            <option value="1">Administrador</option>
+            <option value="2">Cliente</option>
+            
+          </select>
+        </div>
+        
+          
+             
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idseleccionado == ''"> Crear</button>
+          <button type="button" class="btn btn-primary"(click)="Actualizar()" *ngIf="idseleccionado !=''"> Actualizar</button>
+          <button type="button" class="btn btn-danger"(click)="Eliminar()" *ngIf="idseleccionado !=''"> Eliminar</button>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
